@@ -1,17 +1,15 @@
 import React from "react";
-import Card from "../Card/Card";
+import Grid from "@mui/material/Grid";
+import CustomCard from "../Card/Card";
 
 export default function CardList({ cards }) {
   return (
-    <div className="card-list">
+    <Grid container spacing={3} justifyContent="center">
       {cards.map((card) => (
-        <Card
-          key={card.id}
-          title={card.title}
-          description={card.description}
-          image={card.image}
-        />
+        <Grid item key={card.id}>
+          <CustomCard {...card} />
+        </Grid>
       ))}
-    </div>
+    </Grid>
   );
 }

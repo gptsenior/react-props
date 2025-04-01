@@ -1,6 +1,6 @@
 import React from "react";
-import Main from "./components/Main";
-
+import CardList from "./components/CardList";
+import { Container } from "@mui/material";
 
 const cardsData = [
   {
@@ -37,11 +37,10 @@ const cardsData = [
 
 function App() {
   return (
-    <div className="App">
-      <div className="content-wrapper">
-        <Main cards={cardsData} />
-      </div>
-    </div>
+    <Container sx={{ mt: 4 }}>
+      <CardList cards={cardsData} />
+    </Container>
   );
 }
+
 export default App;
