@@ -1,6 +1,7 @@
 import React from "react";
-import Main from "./components/Main";
-
+import { Container, Typography } from "@mui/material";
+import ProfileCard from "./components/ProfileCard";
+import CardList from "./components/CardList";
 
 const cardsData = [
   {
@@ -37,11 +38,20 @@ const cardsData = [
 
 function App() {
   return (
-    <div className="App">
-      <div className="content-wrapper">
-        <Main cards={cardsData} />
-      </div>
-    </div>
+    <Container sx={{ mt: 4, mb: 4 }}>
+      {/* Картка профілю */}
+      <ProfileCard
+        name="Той що ходить на пари"
+        description="Студент, який любить програмувати та спати"
+        image="https://images.unsplash.com/photo-1504593811423-6dd665756598?w=400&h=300&fit=crop"
+      />
+      {/* Список карток */}
+      <Typography variant="h5" align="center" sx={{ mt: 4, mb: 2 }}>
+        Список карток
+      </Typography>
+      <CardList cards={cardsData} />
+    </Container>
   );
 }
+
 export default App;
